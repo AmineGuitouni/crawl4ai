@@ -19,3 +19,7 @@ services:
         reservations:
           memory: 1G
     restart: unless-stopped
+
+    labels:
+      coolify.enable: "true"
+      coolify.primary_port: "11235"
