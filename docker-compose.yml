@@ -1,8 +1,8 @@
 services:
-  crawl4ai:   # Simplified service name
+  crawl4ai:
     image: unclecode/crawl4ai:${VERSION:-basic}-amd64
     ports:
-      - "11235:11235"
+      - "11235:11235"  # Main application port
       - "8025:8000"
       - "9222:9222"
       - "8065:8080"
@@ -19,7 +19,7 @@ services:
         reservations:
           memory: 1G
     restart: unless-stopped
-
+    # Coolify specific labels
     labels:
-      coolify.enable: "true"
-      coolify.primary_port: "11235"
+      "coolify.enable": "true"
+      "coolify.primary_port": "11235"
